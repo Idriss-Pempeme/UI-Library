@@ -18,7 +18,7 @@ export default function LessonItem({ lesson, sectionId, onUpdate, onRemove }) {
           className={styles.titleInput}
           value={lesson.title}
           onChange={(e) => onUpdate({ title: e.target.value })}
-          placeholder={`Titre de la ${lessonType.label.toLowerCase()}...`}
+          placeholder={`Titre du ${lessonType.label.toLowerCase()}...`}
         />
         {lesson.type === 'video' ? (
           <input
@@ -34,9 +34,11 @@ export default function LessonItem({ lesson, sectionId, onUpdate, onRemove }) {
               type="file"
               className={styles.fileInput}
               onChange={(e) => onUpdate({ content: e.target.files[0]?.name })}
-              accept=".pdf,.doc,.docx,.ppt,.pptx"
+              accept={lessonType.accept || '*'}
             />
-            <span className={styles.fileLabel}>{lesson.content || 'Uploader un fichier'}</span>
+            <span className={styles.fileLabel}>
+              {lesson.content || `Uploader un fichier ${lessonType.label}`}
+            </span>
           </div>
         )}
       </div>

@@ -92,7 +92,7 @@ export default function SectionCard({ section, index, onUpdate, onRemove }) {
                     className={styles.lessonTypeBtn}
                     onClick={() => handleAddLesson(type.value)}
                   >
-                    <span className={styles.lessonTypeIcon} dangerouslySetInnerHTML={{ __html: type.icon }} />
+                    <span className={styles.lessonTypeIcon} style={{ color: type.color }} dangerouslySetInnerHTML={{ __html: type.icon }} />
                     <span className={styles.lessonTypeLabel}>{type.label}</span>
                   </button>
                 ))}
