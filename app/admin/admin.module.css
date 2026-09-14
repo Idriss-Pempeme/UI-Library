@@ -1,0 +1,255 @@
+/* ============================
+   ADMIN DASHBOARD PAGE
+   ============================ */
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.pageSubtitle {
+  color: #64748b;
+  font-size: 0.9375rem;
+}
+
+.backLink {
+  padding: 0.5rem 1rem;
+  background: #e2e8f0;
+  color: #0f172a;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  background: #cbd5e1;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.statLabel {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.statValue h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.statValue span {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Table */
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 400px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.table th {
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.clientName {
+  padding: 1rem 0;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.dateCell {
+  padding: 1rem 0;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.amountCell {
+  padding: 1rem 0;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Activity List */
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.activityIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.activityText {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #0f172a;
+}
+
+.activityTime {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ============================
+   RESPONSIVE — Tablet
+   ============================ */
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   RESPONSIVE — Mobile
+   ============================ */
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+  }
+
+  .statValue h3 {
+    font-size: 1.25rem;
+  }
+
+  .mainGrid {
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate-zips": "node scripts/generate-zips.mjs",
+    "prebuild": "node scripts/generate-zips.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
