@@ -4,6 +4,47 @@ import { useState } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+// Unique SVG icon per template
+const TEMPLATE_ICONS = {
+  'course-creator': (color) => (
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      <line x1="6" y1="8" x2="8" y2="8"/>
+      <line x1="6" y1="12" x2="8" y2="12"/>
+      <line x1="16" y1="8" x2="18" y2="8"/>
+      <line x1="16" y1="12" x2="18" y2="12"/>
+    </svg>
+  ),
+  'dashboard-pro': (color) => (
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="9" rx="1"/>
+      <rect x="14" y="3" width="7" height="5" rx="1"/>
+      <rect x="14" y="12" width="7" height="9" rx="1"/>
+      <rect x="3" y="16" width="7" height="5" rx="1"/>
+    </svg>
+  ),
+  'auth-flow': (color) => (
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>
+  ),
+  'pricing-tables': (color) => (
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="1" x2="12" y2="23"/>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+  ),
+  'ecommerce-cards': (color) => (
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="21" r="1"/>
+      <circle cx="20" cy="21" r="1"/>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+  ),
+};
+
 const TEMPLATES = [
   {
     id: 'course-creator',
@@ -150,7 +191,7 @@ Follow these rules strictly:
               {TEMPLATES.map(template => (
                 <div key={template.id} className={styles.templateCard}>
                   <div className={styles.templateVisual} style={{ background: `${template.color}15` }}>
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke={template.color} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    {TEMPLATE_ICONS[template.id](template.color)}
                     {template.isPremium && (
                       <div className={styles.premiumOverlay}>
                         <div className={styles.lockIcon}>
