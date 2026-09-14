@@ -1,0 +1,257 @@
+.pricingContainer {
+  min-height: 100vh;
+  padding: 64px 24px;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.toggleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.toggleLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activeLabel {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.saveBadge {
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.toggleBtn {
+  width: 56px;
+  height: 32px;
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.toggleBtn.toggled {
+  background: #3b82f6;
+}
+
+.toggleKnob {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform: translateX(0);
+}
+
+.toggleBtn.toggled .toggleKnob {
+  transform: translateX(24px);
+}
+
+/* CARDS GRID */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.card.popular {
+  border: 2px solid #3b82f6;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3b82f6;
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardHeader {
+  margin-bottom: 24px;
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.planDesc {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.period {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.billingNote {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+  height: 20px;
+}
+
+.ctaBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 32px;
+}
+
+.primaryBtn {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+.primaryBtn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.secondaryBtn {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.secondaryBtn:hover {
+  background: #e2e8f0;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.featureItem svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .cardsGrid { grid-template-columns: 1fr; }
+  .title { font-size: 2rem; }
+}

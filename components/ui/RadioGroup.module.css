@@ -1,0 +1,132 @@
+.wrapper { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  display: flex; align-items: center; gap: var(--space-1);
+}
+
+.required { color: var(--color-accent-pink); font-weight: var(--font-weight-bold); }
+
+.group { display: flex; gap: var(--space-3); }
+.vertical { flex-direction: column; }
+.horizontal { flex-direction: row; flex-wrap: wrap; }
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-tertiary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex: 1;
+  min-width: 0;
+}
+
+.option:hover {
+  background: var(--color-bg-primary);
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+}
+
+.selected:hover {
+  background: var(--color-primary-subtle);
+  border-color: var(--color-primary);
+}
+
+.input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+.radioCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  margin-top: 2px;
+}
+
+.selected .radioCircle {
+  border-color: var(--color-primary);
+}
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  transition: all var(--transition-spring);
+  transform: scale(0);
+}
+
+.selected .radioDot {
+  background: var(--color-primary);
+  transform: scale(1);
+}
+
+.optionContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.optionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+.optionIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.optionLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.optionDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.error {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+}
+
+.cardStyle .option {
+  padding: var(--space-4) var(--space-5);
+}
+
+@media (max-width: 768px) {
+  .horizontal { flex-direction: column; }
+}

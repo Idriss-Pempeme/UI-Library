@@ -1,0 +1,47 @@
+.wrapper { display: flex; flex-direction: column; gap: var(--space-2); }
+.label { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text-secondary); display: flex; align-items: center; gap: var(--space-1); }
+.required { color: var(--color-accent-pink); font-weight: var(--font-weight-bold); }
+.hiddenInput { display: none; }
+
+.dropzone {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-2); padding: var(--space-10) var(--space-6);
+  border: 2px dashed var(--color-border); border-radius: var(--radius-lg);
+  background: var(--color-bg-tertiary); cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropzone:hover { border-color: var(--color-primary); background: var(--color-primary-subtle); }
+.dragOver { border-color: var(--color-primary); background: var(--color-primary-subtle); transform: scale(1.01); }
+
+.dropzoneIcon { font-size: 2.5rem; animation: float 3s ease-in-out infinite; }
+.dropzoneTitle { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-text-primary); }
+.dropzoneHint { font-size: var(--font-size-xs); color: var(--color-text-tertiary); }
+
+.previewContainer { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/9; }
+.preview { width: 100%; height: 100%; object-fit: cover; }
+
+.previewOverlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center; gap: var(--space-3);
+  opacity: 0; transition: opacity var(--transition-fast);
+}
+
+.previewContainer:hover .previewOverlay { opacity: 1; }
+
+.changeBtn, .removeBtn {
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.changeBtn { background: var(--color-primary); color: white; }
+.changeBtn:hover { background: var(--color-primary-dark); }
+.removeBtn { background: rgba(255,255,255,0.15); color: white; }
+.removeBtn:hover { background: rgba(239,68,68,0.5); }
+
+.error { font-size: var(--font-size-xs); color: var(--color-error); }
+.hint { font-size: var(--font-size-xs); color: var(--color-text-tertiary); }
+.hasError .dropzone { border-color: var(--color-error); }
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
